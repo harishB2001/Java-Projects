@@ -1,0 +1,5 @@
+Customer Id: 12
+Customer Name: Vk
+Account Number: 11012
+ 1 Opeaning 10000 10000.0
+ 2 ATM withdrawl  2000.0 8000.0
