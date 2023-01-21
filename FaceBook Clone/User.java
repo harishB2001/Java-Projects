@@ -27,7 +27,7 @@ class User implements Serializable{
 		this.name = sc.nextLine();
 		System.out.println("\n\t\t\tEnter DOB in yyyy mm dd :");
 		this.dob = LocalDate.of(sc.nextInt(),sc.nextInt(),sc.nextInt());
-		if(dob.equals(LocalDate.of(2010,01,01))) throw new AgeNotEligibleException();
+		if(dob.isBefore(LocalDate.of(2010,01,01))) throw new AgeNotEligibleException();
 		sc.nextLine();
 		System.out.println("\n\t\t\tEnter Gender: ");
 		this.gender = sc.nextLine();
