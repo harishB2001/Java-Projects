@@ -1,6 +1,6 @@
 import java.io.*;
 abstract class Tokens implements Cloneable,Serializable{
-	private static long serialVersionUID = 12L;
+	private static final long serialVersionUID = 12L;
 	int i;
 	int j;
 	int choice = 1;

@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 class Players implements Serializable{
-	private static long serialVersionUID = 12L;
+	private static final long serialVersionUID = 12L;
 	String name;
 	ArrayList<Tokens> tokensList = new ArrayList<Tokens>();
 	String tokenColor;

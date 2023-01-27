@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.*;
 import java.io.*;
 class Board implements Serializable{
-	private static long serialVersionUID = 12L;
+	private static final long serialVersionUID = 12L;
 	private String board[][] =  new String[31][];
 	private HashMap<String,String>safeAreaMap = new HashMap<>();
 	private HashMap<String,String>safeAreaTokenMap = new HashMap<>();
