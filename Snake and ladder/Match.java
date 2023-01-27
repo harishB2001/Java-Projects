@@ -42,7 +42,7 @@ class Match{
 	}
 	
 	private int rollDice(){
-		return (int) ((Math.random() * (6 - 1)) + 1);
+		return (int) Math.round(Math.random()*5+1);
 	}
 	
 	private int nextPlayerPlay(boolean isAutomated,int num){

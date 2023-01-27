@@ -1,0 +1,47 @@
+Board(){
+		for(int i = 0;i<=10;i+=2)board[i] = new String[]{"                          ","-------------","                          "};
+		board[0] = new String[]{"                          ","-------------","                          "};
+		board[1] = new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[2] = new String[]{"                          ","-------------","                          "};
+		board[3] = new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[4] = new String[]{"                          ","-------------","                          "};
+		board[5] = new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[6] = new String[]{"                          ","-------------","                          "};
+		board[7] = new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[8] = new String[]{"                          ","-------------","                          "};
+		board[9] = new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[10]= new String[]{"                          ","-------------","                          "};
+		board[11]= new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[12]= new String[]{"  -------------------------------------------------------------"};
+		board[13]= new String[]{"  | ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","          ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| "};
+		board[14]= new String[]{"  -------------------------","           ","-------------------------"};
+		board[15]= new String[]{"  | ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","          ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| "};
+		board[16]= new String[]{"  -------------------------","           ","-------------------------"};
+		board[17]= new String[]{"  | ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","          ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| ","  ","| "};
+		board[18]= new String[]{"  -------------------------------------------------------------"};
+		board[19]= new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[20]= new String[]{"                          ","-------------","                          "};
+		board[21]= new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[22]= new String[]{"                          ","-------------","                          "};
+		board[23]= new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[24]= new String[]{"                          ","-------------","                          "};
+		board[25]= new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[26]= new String[]{"                          ","-------------","                          "};
+		board[27]= new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[28]= new String[]{"                          ","-------------","                          "};
+		board[29]= new String[]{"                          ","| ","  ","| ","  ","| ","  ","| ","                          "};
+		board[30]= new String[]{"                          ","-------------","                          "};
+		safeAreaMap.put("S1","3,6");
+		safeAreaMap.put("S2","13,21");
+		safeAreaMap.put("S3","17,23");
+		safeAreaMap.put("S4","25,6");
+		safeAreaMap.put("S5","27,2");
+		safeAreaMap.put("S6","17,5");
+		safeAreaMap.put("S7","13,3");
+		safeAreaMap.put("S8","5,2");
+		Tokens token[] = new Tokens[]{new RedTokens("R"),new GreenTokens("G"),new YellowTokens("Y"),new BlueTokens("B")};
+		String[] colorName = {"Red","Green","Yellow","Blue"};
+		for(int i = 1;i<=4;i++){
+			playersList.add(new Players(colorName[i-1],token[i-1]));
+		}
+	}
