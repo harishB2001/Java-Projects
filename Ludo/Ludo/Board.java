@@ -110,7 +110,16 @@ class Board implements Serializable{
 		}
 	}
 	private int rollDice(){
-		return (int) Math.round(Math.random()*5+1);
+		
+		long d = (System.currentTimeMillis()%6)+1;
+		// int d = (int) Math.round(Math.random()*5+1);
+		// if(d == 6)
+			// d+=(int) Math.round(Math.random()*5+1);
+		// if(d==12)
+			// d+=(int) Math.round(Math.random()*5+1);
+		// if(d==18)
+			// d=0;
+		return (int)d;
 	}
 	
 	private void changeNextPlayer(){
@@ -182,10 +191,11 @@ class Board implements Serializable{
 			else{
 				System.out.println(players+" Press Enter to roll the Dice");
 				sc.nextLine();
+				System.out.print(players.name+" Input the Dice: ");
 				int dice = rollDice();
 				System.out.println(players.toString()+" rolled a "+dice);
 				validPiece = players.getValidPiece(dice);
-				if(validPiece.equals("")){prePlayers = players;System.out.println("No Valid Moves Available press Enter to continue");sc.nextLine();changeNextPlayer();continue;}
+				if(dice==0 || validPiece.equals("")){prePlayers = players;System.out.println("No Valid Moves Available press Enter to continue");sc.nextLine();changeNextPlayer();continue;}
 				while(true){
 					System.out.println("Enter Your Piece from "+validPiece);
 					String piece = sc.nextLine().trim();

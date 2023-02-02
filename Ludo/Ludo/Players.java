@@ -36,7 +36,7 @@ class Players implements Serializable{
 		return str.trim();
 	}
 	public Tokens getToken(String piece){
-		char numb = piece.charAt(1);
+		char numb = piece.charAt(0);
 		switch(numb){
 			case '1':return tokensList.get(0);
 			case '2':return tokensList.get(1);
