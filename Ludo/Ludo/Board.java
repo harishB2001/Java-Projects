@@ -197,8 +197,12 @@ class Board implements Serializable{
 				validPiece = players.getValidPiece(dice);
 				if(dice==0 || validPiece.equals("")){prePlayers = players;System.out.println("No Valid Moves Available press Enter to continue");sc.nextLine();changeNextPlayer();continue;}
 				while(true){
-					System.out.println("Enter Your Piece from "+validPiece);
-					String piece = sc.nextLine().trim();
+					String piece = "";
+					if(validPiece.trim().length()==2){
+						piece  = ""+validPiece.charAt(1);
+					}
+					else{System.out.println("Enter Your Piece from "+validPiece);
+					piece = sc.nextLine().trim();}
 					if(validPiece.contains(piece) && !piece.equals("")){
 						Tokens token = players.getToken(piece);
 						clearToken(token);
