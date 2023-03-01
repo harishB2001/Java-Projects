@@ -127,7 +127,7 @@ class Game{
 					board[d[0]][d[1]] = ' ';
 					snakeBody.set(0,'A');
 					isFruit(nextArray[0],nextArray[1]);
-					//sleepTimer = 200;
+					sleepTimer = 200;
 				}else{FileHandling.writeOutput("w");}
 			}break;
 			case "a":{
@@ -140,7 +140,7 @@ class Game{
 					snakeBody.set(0,'<');
 					snakePath.pollLast();
 					isFruit(nextArray[0],nextArray[1]);
-					//sleepTimer = 200;
+					sleepTimer = 200;
 				}else{FileHandling.writeOutput("a");}
 			}
 			break;
@@ -155,7 +155,7 @@ class Game{
 					board[d[0]][d[1]] = ' ';
 					snakeBody.set(0,'v');
 					isFruit(nextArray[0],nextArray[1]);
-					// sleepTimer = 200;
+					sleepTimer = 200;
 				}else{FileHandling.writeOutput("s");}
 			}
 			break;
@@ -169,7 +169,7 @@ class Game{
 					snakePath.pollLast();
 					snakeBody.set(0,'>');
 					isFruit(nextArray[0],nextArray[1]);
-					// sleepTimer = 200;
+					sleepTimer = 200;
 				}else{FileHandling.writeOutput("d");}
 			}
 			break;
@@ -190,11 +190,11 @@ class Game{
 		display();
 		Scanner sc = new Scanner(System.in);
 		while(true){
-			//String dir  = FileHandling.readInput();
-			
-			String dir = sc.nextLine(); 
-			for(int i = 0;i<dir.length();i++)
-			crawl(""+dir.charAt(i));
+			String dir  = FileHandling.readInput();
+			crawl(dir);
+			//String dir = sc.nextLine(); 
+			//for(int i = 0;i<dir.length();i++)
+			//crawl(""+dir.charAt(i));
 		}
 	}
 	
@@ -203,11 +203,12 @@ class Game{
 		setFruit();
 		
 		try{
-		//	Thread.sleep(sleepTimer);
+			Thread.sleep(sleepTimer);
 			new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
 			System.out.println("\n\n\t\tScore: "+(snakeBody.size()-5));
 			System.out.println("\t\tFruit Position: "+fruitPosition[0]+" "+fruitPosition[1]);
 			System.out.println("\t\tHead Position: "+snakePath.get(0)[0]+" "+snakePath.get(0)[1]);
+		//	new ProcessBuilder("cmd","/c","echo [92mGreen[0m").inheritIO().start().waitFor();
 		}
 		catch(Exception e){
 			System.out.println(e);
@@ -216,7 +217,7 @@ class Game{
 		for(int i = 0;i<board.length;i++){
 			System.out.print("\t\t");
 			for(int j = 0;j<board[i].length;j++){
-				System.out.print(board[i][j]);
+				System.out.print(board[i][j]+" ");
 			}
 			System.out.println();
 		}
